@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+   <session-factory>
+   <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+   <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+
+   <!-- ooad is the database name -->
+   <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/library</property>
+   <property name="hibernate.connection.username">root</property>
+   <property name="hibernate.connection.password"></property>
+	
+   <!-- JDBC connection pool -->
+   <!-- <property name="connection.pool_size">1</property> -->
+   	
+   <!--  Disable the second level cache -->
+   <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+   
+   <!-- Echo all executed SQL to stdout -->
+   <property name="show_sql">true</property>
+   
+   <!-- List of XML mapping files -->
+   <mapping class="com.main.entities.AuthorsEntity"/>
+   <mapping class="com.main.entities.BookEntity"/>
+   <mapping class="com.main.entities.BookAuthorsEntity"/>
+   <mapping class="com.main.entities.BookLoansEntity"/>
+   <mapping class="com.main.entities.BorrowerEntity"/>
+   <mapping class="com.main.entities.FinesEntity"/>
+   
+
+</session-factory>
+</hibernate-configuration>
